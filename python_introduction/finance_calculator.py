@@ -1,8 +1,10 @@
-# Prompt the user for monthly income and expenses
+# Prompt the user for their monthly income
 income = float(input("Enter your monthly income: "))
+
+# Prompt the user for their total monthly expenses
 expenses = float(input("Enter your total monthly expenses: "))
 
-# Calculate monthly savings
+# Calculate the monthly savings
 monthly_savings = income - expenses
 
 # Project annual savings with 5% interest
