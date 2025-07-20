@@ -1,8 +1,19 @@
-income = float(input("Enter your monthly income: "))
-expenses = float(input("Enter your total monthly expenses: "))
+# finance_calculator.py
 
-monthly_savings = income - expenses
-annual_savings = monthly_savings * 12 + (monthly_savings * 12 * 0.05)
+# قراءة الدخل الشهري من المستخدم
+monthly_income = float(input("Enter your monthly income: "))
 
-print("Your monthly savings are $" + str(int(monthly_savings)) + ".")
-print("Projected savings after one year, with interest, is: $" + str(int(annual_savings)) + ".")
+# قراءة المصاريف الشهرية من المستخدم
+monthly_expenses = float(input("Enter your total monthly expenses: "))
+
+# حساب التوفير الشهري
+monthly_savings = monthly_income - monthly_expenses
+
+# حساب التوفير السنوي مع الفائدة
+annual_savings = monthly_savings * 12
+interest = annual_savings * 0.05
+projected_savings = annual_savings + interest
+
+# طباعة النتائج
+print(f"Your monthly savings are ${monthly_savings}.")
+print(f"Projected savings after one year, with interest, is: ${projected_savings}.")
