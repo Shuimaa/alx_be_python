@@ -1,24 +1,28 @@
+# programming_paradigm/test_simple_calculator.py
+
 import unittest
-from programming_paradigm.simple_calculator import SimpleCalculator  # ✅ مهم جداً
+from simple_calculator import SimpleCalculator
 
 class TestSimpleCalculator(unittest.TestCase):
-    def test_add(self):
-        calc = SimpleCalculator()
-        self.assertEqual(calc.add(2, 3), 5)
+    def setUp(self):
+        self.calc = SimpleCalculator()
 
-    def test_subtract(self):
-        calc = SimpleCalculator()
-        self.assertEqual(calc.subtract(5, 2), 3)
+    def test_addition(self):
+        self.assertEqual(self.calc.add(2, 3), 5)
+        self.assertEqual(self.calc.add(-1, 1), 0)
+
+    def test_subtraction(self):
+        self.assertEqual(self.calc.subtract(5, 3), 2)
+        self.assertEqual(self.calc.subtract(0, 4), -4)
 
     def test_multiply(self):
-        calc = SimpleCalculator()
-        self.assertEqual(calc.multiply(4, 3), 12)
+        self.assertEqual(self.calc.multiply(4, 3), 12)
+        self.assertEqual(self.calc.multiply(0, 10), 0)
 
     def test_divide(self):
-        calc = SimpleCalculator()
-        self.assertEqual(calc.divide(10, 2), 5)
+        self.assertEqual(self.calc.divide(10, 2), 5)
         with self.assertRaises(ValueError):
-            calc.divide(5, 0)
+            self.calc.divide(5, 0)
 
 if __name__ == '__main__':
     unittest.main()
