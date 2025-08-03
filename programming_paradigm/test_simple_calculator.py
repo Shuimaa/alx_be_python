@@ -4,7 +4,6 @@ from simple_calculator import SimpleCalculator
 class TestSimpleCalculator(unittest.TestCase):
 
     def setUp(self):
-        """Set up the SimpleCalculator instance before each test."""
         self.calc = SimpleCalculator()
 
     def test_addition(self):
@@ -20,6 +19,10 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.multiply(4, 3), 12)
         self.assertEqual(self.calc.multiply(0, 10), 0)
 
-    def test_division(self):  # ✅ هذا هو الاسم الذي يريده checker
-        self.assertEqua
+    def test_division(self):
+        self.assertEqual(self.calc.divide(10, 2), 5)
+        self.assertEqual(self.calc.divide(9, 3), 3)
+        self.assertIsNone(self.calc.divide(5, 0))  # division by zero returns None
 
+if __name__ == '__main__':
+    unittest.main()
